@@ -149,7 +149,8 @@ Project Settings → Database
 
 4. Copie:
 
-   * Instance ID
+   * Instance ID (Somente ate o valor do token)
+      Ex: https://api.z-api.io/instances/{numero da instancia}/token/{valor do token} - [SEM BARAR NO FINAL]
    * Instance Token
 
 5. Adicione essas informações ao arquivo `.env`.
