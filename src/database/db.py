@@ -1,10 +1,17 @@
+"""
+Arquivo responsavel por iniciar a conexão com o banco de dados
+E realizar a manipulação via sqlite
+"""
+
+
 from src.models.consts import DATABASE_URL
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.pool import NullPool
 from contextlib import contextmanager
-engine = create_engine(DATABASE_URL,poolclass=NullPool,echo=True)
+
+engine = create_engine(DATABASE_URL,poolclass=NullPool)
 session = sessionmaker(autocommit=False,autoflush=False,bind=engine,expire_on_commit=False,)
 base = declarative_base()
 

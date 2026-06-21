@@ -1,3 +1,13 @@
+"""
+Arquivo contendo todas as constantes do programa
+Como: 
+- Variaveis de ambiente
+- Caminho de arquivos
+- Padrões de REGEX
+- Entre outros
+"""
+
+
 from pathlib import Path
 from dotenv import load_dotenv
 import os

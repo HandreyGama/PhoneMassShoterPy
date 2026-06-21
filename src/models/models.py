@@ -1,6 +1,6 @@
 from src.database.db import base, engine
 from src.models.consts import TELEFONE_REGEX_PATTERN
-from sqlalchemy import Integer, Column, String, ForeignKey, Enum
+from sqlalchemy import Integer, Column, String, ForeignKey, Enum, DateTime
 from sqlalchemy.orm import validates, relationship
 import enum
 import re
@@ -30,10 +30,10 @@ class TelefoneVisto(base):
     __tablename__ = "telefones_vistos"
 
     id = Column(Integer,primary_key=True,index=True)
-    telefone = Column(String,unique=True,nullable=False)
-    status = Column(Enum(StatusClass),unique=True,nullable=False)
+    telefone = Column(String,nullable=False)
+    status = Column(Enum(StatusClass),nullable=False)
     tid = Column(Integer,ForeignKey('telefones.id'))
     telefone_link = relationship('Telefone',back_populates='telefones_vistos_link')
-
+    data = Column(DateTime,nullable=False)
 
 base.metadata.create_all(bind=engine)
