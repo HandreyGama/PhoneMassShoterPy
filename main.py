@@ -11,6 +11,7 @@ parser.add_argument("-t",'--type')
 parser.add_argument("-m",'--message')
 parser.add_argument("-r",'--rate_limit')
 
+
 args = parser.parse_args()
 
 if __name__ == "__main__":
@@ -18,4 +19,5 @@ if __name__ == "__main__":
         run(args)
         pass
     elif args.type == "server":
+        print("This feature is not implemented yet!")
         pass
